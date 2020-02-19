@@ -51,9 +51,14 @@ test("Admin should be in usernames", () => {
 // Promise
 test("User fetchd name chould be Leanne Graham", () => {
   expect.assertions(1);
-  return functions
-    .fetchUser()
-    .then(data => {
-      expect(data.name).toEqual("Leanne Graham");
-    });
+  return functions.fetchUser().then(data => {
+    expect(data.name).toEqual("Leanne Graham");
+  });
+});
+
+// Async Await
+test("User fetchd name chould be Leanne Graham", async () => {
+  expect.assertions(1);
+  const data = await functions.fetchUser();
+  expect(data.name).toEqual("Leanne Graham");
 });
